@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CRUD SPRING BOOT</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1AnmW2rE5YZuXk+0qNzWt4Ek5FLBlTc5h7Yjp1rt1W/tg/e0iP5k" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-5">
+		<form th:action="@{/save}" th:object="${persona}" method="POST">
+			<div class="mb-3">
+				<label for="id" class="form-label">ID</label>
+				<input type="text" id="id" th:field="*{id}" class="form-control" readonly="readonly" />
+			</div>
+			<div class="mb-3">
+				<label for="name" class="form-label">NOMBRE</label>
+				<input type="text" id="name" th:field="*{name}" class="form-control" />
+			</div>
+			<div class="mb-3">
+				<label for="telefono" class="form-label">TELEFONO</label>
+				<input type="text" id="telefono" th:field="*{telefono}" class="form-control" />
+			</div>
+			<div class="d-flex justify-content-between">
+				<input type="submit" value="Guardar" class="btn btn-primary" /> 
+				<a th:href="@{/listar}" class="btn btn-secondary">Regresar</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
